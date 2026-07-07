@@ -102,6 +102,22 @@ button:hover {
   background: var(--brand-dark);
 }
 
+button.secondary {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--brand);
+  padding: 9px 11px;
+}
+
+button.secondary:hover {
+  background: #eef8f8;
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
 .notice {
   border: 1px solid var(--warn-line);
   border-radius: 8px;
@@ -147,7 +163,7 @@ button:hover {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(260px, 1.4fr) auto;
+  grid-template-columns: minmax(220px, 1fr) auto;
   gap: 12px;
   align-items: end;
   border: 1px solid var(--line);
@@ -186,7 +202,7 @@ input {
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin: 16px 0 24px;
 }
@@ -269,6 +285,10 @@ input {
 
 .price-box a {
   font-size: 0.82rem;
+}
+
+.price-box.is-loading strong {
+  color: var(--brand);
 }
 
 .card h3 {
