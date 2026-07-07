@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparador de medicamentos en Madrid</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="toolbar">
+        <div>
+          <p class="eyebrow">Consulta para paciente privado</p>
+          <h1>Medicamentos en Madrid</h1>
+          <p class="subtitle">
+            Presentaciones oficiales desde AEMPS y acceso a precio orientativo encontrado online.
+          </p>
+        </div>
+        <button id="refreshBtn" type="button">Actualizar ahora</button>
+      </section>
+
+      <section class="notice">
+        <strong>Nota importante:</strong>
+        Gonal-f, Menopur y Ovitrelle son medicamentos sujetos a receta/diagnóstico hospitalario. La app no inventa precios:
+        el precio online debe confirmarse con una farmacia antes de informar al paciente.
+      </section>
+
+      <section class="source-panel">
+        <h2>Fuentes en España</h2>
+        <div class="source-grid">
+          <a target="_blank" rel="noreferrer" href="https://cima.aemps.es/cima/publico/home.html">
+            <strong>CIMA / AEMPS</strong>
+            <span>Presentaciones, receta, ficha técnica y prospecto.</span>
+          </a>
+          <a target="_blank" rel="noreferrer" href="https://www.sanidad.gob.es/profesionales/medicamentos.do">
+            <strong>BIFIMED / Ministerio de Sanidad</strong>
+            <span>Financiación, visado, código nacional y estado en Nomenclátor.</span>
+          </a>
+          <a target="_blank" rel="noreferrer" href="https://distafarma.aemps.es/">
+            <strong>Distafarma / AEMPS</strong>
+            <span>Farmacias autorizadas para venta online de medicamentos sin receta.</span>
+          </a>
+          <a target="_blank" rel="noreferrer" href="https://www.cofm.es/es/buscador-de-farmacias/">
+            <strong>COFM Madrid</strong>
+            <span>Buscador de farmacias de la Comunidad de Madrid.</span>
+          </a>
+          <a target="_blank" rel="noreferrer" href="https://botplusweb.farmaceuticos.com/">
+            <strong>BOT PLUS</strong>
+            <span>Base farmacéutica profesional; puede requerir acceso.</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Filtros">
+        <label>
+          Medicamento
+          <select id="medicineSelect"></select>
+        </label>
+        <label>
+          Buscar presentación
+          <input id="searchInput" type="search" placeholder="Ej. 300 UI, pluma, 250 microgramos..." />
+        </label>
+        <label class="checkbox">
+          <input id="commercialOnly" type="checkbox" />
+          Solo comercializados
+        </label>
+      </section>
+
+      <section class="summary-grid">
+        <article>
+          <span id="countStat">0</span>
+          <p>presentaciones encontradas</p>
+        </article>
+        <article>
+          <span id="rxStat">-</span>
+          <p>condición de dispensación</p>
+        </article>
+        <article>
+          <span id="updatedStat">Sin actualizar</span>
+          <p>última consulta</p>
+        </article>
+      </section>
+
+      <section class="results-header">
+        <h2>Presentaciones</h2>
+        <div class="quick-links">
+          <a id="mapsLink" target="_blank" rel="noreferrer">Farmacias cercanas</a>
+        </div>
+      </section>
+
+      <section id="status" class="status" role="status">Cargando datos...</section>
+      <section id="cards" class="cards" aria-live="polite"></section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
